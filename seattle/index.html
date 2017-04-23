@@ -6,9 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Seattle Children's Hospital Rounding | </title>
-
+    <title>Seattle Children's Hospital Rounding</title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -17,26 +15,24 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
     <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- header contains all the meta information for website style: fonts, header format, etc, etc-->
   </head>
 
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
+        <!-- side bar menu -->
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-
             <div class="clearfix"></div>
-
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
@@ -44,17 +40,15 @@
               </div>
             </div>
             <br />
-
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>Rounds</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-user"></i> Patients <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index.html">Chethan Jujjavarapu</a></li>
-                      <li><a href="index2.html">Lauren Birkey</a></li>
-                      <li><a href="index3.html">Yiqi Ni</a></li>
+                      <li><a href="index.html">Lauren Birkey</a></li>
+                      <li><a href="index.html">Yiqi Ni</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -66,46 +60,18 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <!-- patient value tiles -->
           <div class="row tile_count">
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="fa fa-heartbeat"></i>HR (BPM)</span>
-              <div class="count">115-120</div>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="fa fa-heart"></i> Systolic BP</span>
-              <div class="count">60-110</div>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="fa fa-heart"></i> Diastolic BP</span>
-              <div class="count">30-80</div>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="glyphicon glyphicon-scale"></i>Weight (kg)</span>
-              <div class="count">28.1</div>
-              <span class="count_bottom">From last 24 hours</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="fa fa-tint"></i>Fluids (ml)</span>
-              <div class="count">+800</div>
-              <span class="count_bottom">From last 24 hours</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-2 tile_stats_count">
-              <span class="count_top"><i class="fa fa-thermometer"></i>Temperature (C)</span>
-              <div class="count red">39-42</div>
-          </div>
-
           <!-- first row of graphs and medications -->
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="col-md-4 col-lg-4">
               <div class="dashboard_graph">
                 <div class="x_title">
                   <div class="col-md-0">
-                    <h3>Vital Signs</h3>
+                    <h3>Temperature</h3>
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-4">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                  <div id="area-example" class="demo-placeholder"></div>
                 </div>
                 <div class="clearfix"></div>
               </div>
@@ -765,6 +731,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-	
+	   <link href="../css/seattle.css" rel="stylesheet">
+    <script src="../js/data.js"></script>
   </body>
 </html>
