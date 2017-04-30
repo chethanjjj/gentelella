@@ -23,6 +23,8 @@
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- add plotly.js source -->
+    <script src="../vendors/plotlyjs/dist/plotly.min.js"></script>
     <!-- header contains all the meta information for website style: fonts, header format, etc, etc-->
   </head>
 
@@ -64,7 +66,7 @@
           <!-- first row of graphs and medications -->
           <div class="row">
             <div class="col-md-4 col-lg-4">
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0 col-lg-0">
                     <h3>Temperature</h3>
@@ -76,7 +78,7 @@
                 </div>
                 <div class="clearfix"></div>
               </div>
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0 col-lg-0">
                     <h3>Heart & Respiration Rates</h3>
@@ -91,7 +93,7 @@
             </div>
 
             <div class="col-md-4 col-lg-4">
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0">
                     <h3>Respiration</h3>
@@ -104,7 +106,7 @@
                 </div>
                 <div class="clearfix"></div>
               </div>
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0">
                     <h4>SpO2, FiO2, ETCO2</h4>
@@ -119,7 +121,7 @@
             </div>
 
             <div class="col-md-4 col-lg-4">
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0">
                     <h3>Medication</h3>
@@ -127,20 +129,41 @@
                   </div>
                 </div>
                 <div class="container">
-                <table class="table table-bordered" style="width:100%">
+                <table class="table table-striped" style="width:100%">
+                  <thead>
                   <tr>
                     <th>Medication</th>
                     <th>Dose</th>
                     <th>Route</th>
                     <th>Frequency</th>
                   </tr>
+                </thead>
+                <tbody>
                   <tr>
-                    <td>Drug 1</td>
-                    <td>50 ml</td>
+                    <td>Normal Saline</td>
+                    <td>75 ml/hr</td>
+                    <td>FILL</td>
+                    <td>FILL</td>
                   </tr>
                   <tr>
-                    <td>Drug 2</td>
-                    <td>30 ml</td>
+                    <td>Insulin</td>
+                    <td>0.5 units/hr</td>
+                    <td>FILL</td>
+                    <td>FILL</td>
+                  </tr>
+                  <tr>
+                    <td>Norepinephrine</td>
+                    <td>0.1 mcg/kg/min</td>
+                    <td>FILL</td>
+                    <td>FILL</td>
+                  </tr>
+                  <tr>
+                    <td>Propofol</td>
+                    <td>50 mcg/kg/min</td>
+                    <td>FILL</td>
+                    <td>FILL</td>
+                  </tr>
+                  </tbody>
                 </table>
               </div>
               </div>
@@ -151,7 +174,7 @@
           <div class="row">
             <!-- blood pressure -->
             <div class="col-md-4 col-lg-4">
-              <div class="dashboard_graph">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <h3>Blood Pressure</h3>
               </div>
@@ -161,8 +184,8 @@
             <div class="clearfix"></div>
           </div>
           <!-- pain, flacc, wat-1, rass table -->
-            <div class="container">
-                <table class="table table-bordered" style="width:100%">
+            <div class="x_panel tile">
+                <table class="table table-striped" style="width:100%">
                   <thead>
                   <tr>
                     <th>Measure</th>
@@ -197,7 +220,7 @@
         </div>
         <!-- labs -->
         <div class="col-md-4 col-lg-4">
-          <div class="dashboard">
+          <div class="x_panel tile">
             <div class="x_title">
               <div class="col-md-0">
                 <h3>Labs</h3>
@@ -209,7 +232,7 @@
             </ul>
             <div class="tab-content">
               <div id="General" class="tab-pane fade in active">
-              <table class="table table-bordered" style="width:100%">
+              <table class="table table-striped" style="width:100%">
                 <thead>
                   <tr>
                     <th>Measurement</th>
@@ -264,7 +287,7 @@
               </table>
             </div>
             <div id="WBC" class="tab-pane fade">
-              <table class="table table-bordered" style="width:100%">
+              <table class="table table-striped" style="width:100%">
                 <thead>
                   <tr>
                     <th>Measurement</th>
@@ -320,7 +343,7 @@
             </div>
           </div>
         </div>
-        <div class="container">
+        <div class="x_panel tile fixed_height_100">
           <ul class="pager">
             <li><a href="#">EKG</a></li>
             <li><a href="#">PACS</a></li>
@@ -329,13 +352,13 @@
       </div>
             <!-- scheduled medication -->
             <div class="col-md-4 col-lg-4">
-              <div class="dashboard">
+              <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0">
                     <h4>Scheduled</h4>
                   </div>
                 </div>
-                <table class="table table-bordered" style="width:100%">
+                <table class="table table-striped" style="width:100%">
                   <thead>
                   <tr>
                     <th>Medication</th>
@@ -373,14 +396,14 @@
         <div class="row">
           <!-- intake/output -->
           <div class="col-md-4 col-lg-4">
-            <div class="dashboard">
+            <div class="x_panel tile">
               <div class="x_title">
                 <div class="col-md-0">
                   <h3>Intake & Output</h3>
                 </div>
               </div>
             <div class="col-md-12 col-lg-12">
-              <div id="tester" style="width:600px;height:250px;">
+              <div id="intake_output">
               </div>
             </div>
             <div class="clearfix"></div>
@@ -388,22 +411,51 @@
           </div>
           <!-- lines/tubes -->
           <div class="col-md-4 col-lg-4">
-            <div class="dashboard">
+            <div class="x_panel tile">
               <div class="x_title">
                 <div class="col-md-0">
                   <h3>Lines/Tubes</h3>
                 </div>
               </div>
+                <ul class="list-group">
+                  <li class="list-group-item"> Nasogastric tube 12F, left nares</li>
+                  <li class="list-group-item">Foley catheter 8F</li>
+                  <li class="list-group-item">Morbi leo risus</li>
+                  <li class="list-group-item">Left FA PIV #24   (FA is forearm and PIV is peripheral intravenous)</li>
+                  <li class="list-group-item">Right IJ Dialysis catheter, double lumen (IJ is internal jugular)</li>
+                </ul>              
             </div>
           </div>
           <!-- Problems/DX -->
           <div class="col-md-4 col-lg-4">
-            <div class="dashboard">
+            <div class="x_panel tile">
               <div class="x_title">
                 <div class="col-md-0">
-                  <h4>Problems/Dx</h4>
+                  <h4>PRN</h4>
                 </div>
               </div>
+                <table class="table table-striped" style="width:100%">
+                  <thead>
+                  <tr>
+                    <th>Medication</th>
+                    <th>Dose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>buffered lidocain 1% (buffered lidocaine 1% J-Tip)</td>
+                    <td>0.25 mL intrDermal as needed</td>
+                  </tr>
+                  <tr>
+                    <td>fentaNYL (fentaNYL 50 mcg/ml infusion BOLUS)</td>
+                    <td>50 mcg = 1 mL IV</td>
+                  </tr>
+                  <tr>
+                    <td>Hydromorphine</td>
+                    <td>0.6 mg = 3 mL IV Q 1 hr</td>
+                  </tr>
+                </tbody>
+              </table>              
             </div>
           </div>
         <!-- end of row 3 -->  
@@ -443,8 +495,6 @@
     <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
     <script src="../vendors/DateJS/build/date.js"></script>
-    <!-- plotlyJS -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- JQVMap -->
     <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
     <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>

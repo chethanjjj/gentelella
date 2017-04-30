@@ -1,3 +1,4 @@
+// temperature graph
 Morris.Area({
   // ID of the element in which to draw the chart.
   element: 'temp',
@@ -45,6 +46,7 @@ Morris.Area({
   grid: false
 });
 
+// heart and respiration rate
 Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'hr',
@@ -92,6 +94,7 @@ Morris.Line({
   grid: false
 });
 
+// respiration graph
 Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'resp',
@@ -139,6 +142,7 @@ Morris.Line({
   grid: false
 });
 
+// o2 and co2 graph
 Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'o2_co2',
@@ -186,6 +190,7 @@ Morris.Line({
   grid: false
 });
 
+// blood pressure graph
 Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'bp',
@@ -233,8 +238,62 @@ Morris.Line({
   grid: false
 });
 
-TESTER = document.getElementById('tester');
-Plotly.plot( TESTER, [{
-  x: [1, 2, 3, 4, 5],
-  y: [1, 2, 4, 8, 16] }], {
-  margin: { t: 0 } } );
+// intake and output graph
+// creating intake and output data
+var xValue = ['4/25/17', '4/26/17', '4/27/17', '4/28/17', '4/29/17', 'Total'];
+var yValue_output = [-2500, -1400, -2300, -3000, -800];
+var yValue_input = [2000, 2000, 7000, 2100, 800];
+// summing function
+function getSum(total, num) {
+    return total + num;
+}
+// sum of intake and output
+var yValue_output_total = yValue_output.reduce(getSum);
+var yValue_input_total = yValue_input.reduce(getSum);
+// add sum values to arrays
+yValue_output.push(yValue_output_total)
+yValue_input.push(yValue_input_total)
+// output data
+var output = {
+  x: xValue,
+  y: yValue_output,
+  name: 'Output',
+  type: 'bar',
+    marker: {
+    color: 'rgb(246, 209, 85)',
+    opacity: 0.5
+  }
+};
+// intake data
+var input = {
+  x: xValue,
+  y: yValue_input,
+  name: 'Intake',
+  type: 'bar',
+  marker: {
+    color: 'rgb(76, 106, 146)',
+    opacity: 0.5,
+  }  
+};
+var annotationContent = [];
+var data = [input, output];
+var layout = {barmode: 'relative',
+annotations: annotationContent,
+yaxis: {
+  showgrid: false,
+  showline: false
+}};
+// adds the difference between intake and output value to the top of each bar graph
+for( var i = 0 ; i < xValue.length ; i++ ){
+  var result = {
+    x: xValue[i],
+    y: yValue_input[i],
+    text: yValue_input[i] + yValue_output[i],
+    xanchor: 'center',
+    yanchor: 'bottom',
+    showarrow: false
+  };
+  annotationContent.push(result);
+}
+// plot data
+Plotly.newPlot('intake_output', data, layout);
