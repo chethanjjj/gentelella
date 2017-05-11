@@ -282,7 +282,8 @@ annotations: annotationContent,
 yaxis: {
   showgrid: false,
   showline: false
-}};
+}
+};
 // adds the difference between intake and output value to the top of each bar graph
 for( var i = 0 ; i < xValue.length ; i++ ){
   var result = {
