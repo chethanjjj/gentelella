@@ -23,8 +23,8 @@
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <!-- add plotly.js source -->
-    <script src="../vendors/plotlyjs/dist/plotly.min.js"></script>
+    <!-- add highcharts.js source -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
     <!-- header contains all the meta information for website style: fonts, header format, etc, etc-->
   </head>
 
@@ -56,15 +56,14 @@
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
 
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="row tile_count">
-          <!-- first row of graphs and medications -->
           <div class="row">
+          <!-- start of column 1 -->
             <div class="col-md-4 col-lg-4">
               <div class="x_panel tile">
                 <div class="x_title">
@@ -73,7 +72,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-12">
-                  <div id='temp' style="width:100%; height:120px;">
+                  <div id='temp' style="width:100%; height:200px;">
                   </div>
                 </div>
                 <div class="clearfix"></div>
@@ -81,111 +80,69 @@
               <div class="x_panel tile">
                 <div class="x_title">
                   <div class="col-md-0 col-lg-0">
-                    <h3>Heart & Respiration Rates</h3>
+                    <h3>HR/RR</h3>
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-12">
-                  <div id='hr' style="width:100%; height:180px;">
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-lg-4">
-              <div class="x_panel tile">
-                <div class="x_title">
-                  <div class="col-md-0">
-                    <h3>Respiration</h3>
-                    <h4>Rate, PIP, PEEP</h4>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12">
-                  <div id='resp' style="width:100%; height:150px;">
+                  <div id='hr' style="width:100%; height:200px;">
                   </div>
                 </div>
                 <div class="clearfix"></div>
               </div>
               <div class="x_panel tile">
                 <div class="x_title">
-                  <div class="col-md-0">
-                    <h4>SpO2, FiO2, ETCO2</h4>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12">
-                  <div id='o2_co2' style="width:100%; height:150px;">
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-lg-4">
-              <div class="x_panel tile">
-                <div class="x_title">
-                  <div class="col-md-0">
-                    <h3>Medication</h3>
-                    <h4>Continuous Infusion</h4>
-                  </div>
-                </div>
-                <div class="container">
-                <table class="table table-striped" style="width:100%">
-                  <thead>
-                  <tr>
-                    <th>Medication</th>
-                    <th>Dose</th>
-                    <th>Route</th>
-                    <th>Frequency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Normal Saline</td>
-                    <td>75 ml/hr</td>
-                    <td>FILL</td>
-                    <td>FILL</td>
-                  </tr>
-                  <tr>
-                    <td>Insulin</td>
-                    <td>0.5 units/hr</td>
-                    <td>FILL</td>
-                    <td>FILL</td>
-                  </tr>
-                  <tr>
-                    <td>Norepinephrine</td>
-                    <td>0.1 mcg/kg/min</td>
-                    <td>FILL</td>
-                    <td>FILL</td>
-                  </tr>
-                  <tr>
-                    <td>Propofol</td>
-                    <td>50 mcg/kg/min</td>
-                    <td>FILL</td>
-                    <td>FILL</td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              </div>
-            </div>
-          <!-- row 1 end-->
-          </div>
-          <!-- row 2 starts -->
-          <div class="row">
-            <!-- blood pressure -->
-            <div class="col-md-4 col-lg-4">
-              <div class="x_panel tile">
-                <div class="x_title">
-                  <h3>Blood Pressure</h3>
+                  <h3>Pressures</h3>
               </div>
               <div class="col-md-12 col-lg-12">
-                <div id="bp" style="width:100%; height:180px;"></div>
+                <div id="bp" style="width:100%; height:200px;"></div>
             </div>
             <div class="clearfix"></div>
-          </div>
-          <!-- pain, flacc, wat-1, rass table -->
+            </div>
             <div class="x_panel tile">
-                <table class="table table-striped" style="width:100%">
+              <div class="x_title">
+                <div class="col-md-0">
+                  <h3>Nutrition/I&O</h3>
+                </div>
+              </div>
+              <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>5/23/17</th>
+                    <th>5/24/17</th>
+                    <th>5/25/17</th>
+                    <th>5/26/17</th>
+                    <th>5/27/17</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                    <tr>
+                      <td>Balance (ml)</td>
+                      <td>-500</td>
+                      <td>600</td>
+                      <td>4700</td>
+                      <td>-900</td>
+                      <td>0</td>
+                      <td>3900</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              <ul class="list-group">
+                  <li class="list-group-item">NPO</li>
+                  <li class="list-group-item">Elecare 20kcal/ml 67ml/hr by Jtube continuous x18 hours</li>
+                  <li class="list-group-item">Parenteral nutrition 75ml/hr x 18 hours</li>
+              </ul>  
+            <div class="col-md-12 col-lg-12">
+              <div id="intake_output">
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            </div>
+            <div class="x_panel tile">
+                <table class="table table-striped">
                   <thead>
                   <tr>
                     <th>Measure</th>
@@ -217,201 +174,46 @@
                 </tbody>
                 </table>
               </div>
-        </div>
-        <!-- labs -->
-        <div class="col-md-4 col-lg-4">
+            <!-- end of column 1 -->
+            </div>
+            <!-- start of column 2 -->
+            <div class="col-md-4 col-lg-4">
+              <div class="x_panel tile">
+                <div class="x_title">
+                  <div class="col-md-0">
+                    <h3>Respiratory Support</h3>
+                    <h4>Rate, PIP, PEEP</h4>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                  <div id='resp' style="width:100%; height:200px;">
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="x_title">
+                  <div class="col-md-0">
+                    <h4>SpO2, FiO2, ETCO2</h4>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                  <div id='o2_co2' style="width:100%; height:200px;">
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
           <div class="x_panel tile">
             <div class="x_title">
               <div class="col-md-0">
                 <h3>Labs</h3>
               </div>
-            </div>
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#General">General</a></li>
-              <li><a data-toggle="tab" href="#WBC">WBC</a></li>
-            </ul>
-            <div class="tab-content">
-              <div id="General" class="tab-pane fade in active">
-              <table class="table table-striped" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Measurement</th>
-                    <th>Value</th>
-                    <th>Date</th>
-                    <th>Trend</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>K+</td>
-                    <td>3.2</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>12%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Na+</td>
-                    <td>135</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>4%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Cl-</td>
-                    <td>100</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>5%</i></td>
-                  </tr>
-                  <tr>
-                    <td>CO2</td>
-                    <td>25</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>10%</i></td>
-                  </tr>
-                  <tr>
-                    <td>BUN</td>
-                    <td>8</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>2%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Creat</td>
-                    <td>0.9</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>1%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Gluc</td>
-                    <td>125</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>2%</i></td>
-                  </tr>
-              </table>
-            </div>
-            <div id="WBC" class="tab-pane fade">
-              <table class="table table-striped" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Measurement</th>
-                    <th>Value</th>
-                    <th>Date</th>
-                    <th>Trend</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>RBC</td>
-                    <td>2.94</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>12%</i></td>
-                  </tr>
-                  <tr>
-                    <td>HgB</td>
-                    <td>8.9</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>4%</i></td>
-                  </tr>
-                  <tr>
-                    <td>MCV</td>
-                    <td>95.2</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>5%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Plt</td>
-                    <td>45</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>10%</i></td>
-                  </tr>
-                  <tr>
-                    <td>RDW</td>
-                    <td>15.9</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>2%</i></td>
-                  </tr>
-                  <tr>
-                    <td>Hct</td>
-                    <td>28.0</td>
-                    <td>4/29/17</td>
-                    <td><i class="red"><i class="fa fa-sort-desc"></i>1%</i></td>
-                  </tr>
-                  <tr>
-                    <td>WBC</td>
-                    <td>10.8</td>
-                    <td>4/29/17</td>
-                    <td><i class="green"><i class="fa fa-sort-asc"></i>2%</i></td>
-                  </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="x_panel tile fixed_height_100">
-          <ul class="pager">
-            <li><a href="#">EKG</a></li>
-            <li><a href="#">PACS</a></li>
-          </ul>
-        </div>
-      </div>
-            <!-- scheduled medication -->
-            <div class="col-md-4 col-lg-4">
-              <div class="x_panel tile">
-                <div class="x_title">
-                  <div class="col-md-0">
-                    <h4>Scheduled</h4>
-                  </div>
-                </div>
-                <table class="table table-striped" style="width:100%">
-                  <thead>
-                  <tr>
-                    <th>Medication</th>
-                    <th>Dose</th>
-                    <th>Route</th>
-                    <th>Frequency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Magnesium Sulfate</td>
-                    <td>1,280 mg</td>
-                    <td>100 mL IV Q 6 hours</td>
-                    <td>3 Doses</td>
-                  </tr>
-                  <tr>
-                    <td>Methylpredinsoline</td>
-                    <td>1,000 mg</td>
-                    <td>16 mL IV Q 6 hrs</td>
-                    <td>3 Doses</td>
-                  </tr>
-                  <tr>
-                    <td>Pantoprazole</td>
-                    <td>40 mg</td>
-                    <td>50 mL IV Q 24 hrs</td>
-                    <td>1 Dose</td>
-                  </tr>
-                </tbody>
-                </table>
-            </div>
-          </div>
-        <!-- row 2 ends --> 
-        </div>
-
-        <div class="row">
-          <!-- intake/output -->
-          <div class="col-md-4 col-lg-4">
-            <div class="x_panel tile">
-              <div class="x_title">
-                <div class="col-md-0">
-                  <h3>Intake & Output</h3>
-                </div>
               </div>
-            <div class="col-md-12 col-lg-12">
-              <div id="intake_output">
-              </div>
-            </div>
-            <div class="clearfix"></div>
-            </div>
+                <img class="img-responsive" src="images/fishbone.png" alt="Chania" width="460" height="345"> 
           </div>
-          <!-- lines/tubes -->
-          <div class="col-md-4 col-lg-4">
-            <div class="x_panel tile">
+          <div class="panel-body text-center">
+            <button type="button" class="btn btn-primary">EKG</button>
+            <button type="button" class="btn btn-primary">PACS</button>
+        </div>
+          <div class="x_panel tile">
               <div class="x_title">
                 <div class="col-md-0">
                   <h3>Lines/Tubes</h3>
@@ -425,40 +227,84 @@
                   <li class="list-group-item">Right IJ Dialysis catheter, double lumen (IJ is internal jugular)</li>
                 </ul>              
             </div>
-          </div>
-          <!-- Problems/DX -->
-          <div class="col-md-4 col-lg-4">
-            <div class="x_panel tile">
+        <!-- end of column 2 -->
+        </div>
+        <!-- start of column 3 -->
+            <div class="col-md-4 col-lg-4">
+              <div class="x_panel tile">
+                <div class="x_title">
+                  <div class="col-md-0">
+                    <h3>Medication</h3>
+                    <h4>Continuous Infusion</h4>
+                  </div>
+                </div>
+                <div class="container">
+                <table class="table table-striped" style="width:100%">
+                <tbody>
+                  <tr>
+                    <td>Normal Saline</td>
+                    <td>75 ml/hr</td>
+                  </tr>
+                  <tr>
+                    <td>Insulin</td>
+                    <td>0.5 units/kg/hr</td>
+                  </tr>
+                  <tr>
+                    <td>Norepinephrine</td>
+                    <td>0.1 mcg/kg/min</td>
+                  </tr>
+                  <tr>
+                    <td>Propofol</td>
+                    <td>50 mcg/kg/min</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+                <div class="x_title">
+                  <div class="col-md-0">
+                    <h4>Scheduled</h4>
+                  </div>
+                </div>
+                <table class="table table-striped" style="width:100%">
+                <tbody>
+                  <tr>
+                    <td>Magnesium Sulfate</td>
+                    <td>1,280 mg</td>
+                    <td>IV Q 6 hours</td>
+                  </tr>
+                  <tr>
+                    <td>Methylprednisolone</td>
+                    <td>1,000 mg</td>
+                    <td>IV Q 6 hrs</td>
+                  </tr>
+                  <tr>
+                    <td>Pantoprazole</td>
+                    <td>40 mg</td>
+                    <td>IV Q 24 hrs</td>
+                  </tr>
+                </tbody>
+                </table>
               <div class="x_title">
                 <div class="col-md-0">
                   <h4>PRN</h4>
                 </div>
               </div>
                 <table class="table table-striped" style="width:100%">
-                  <thead>
-                  <tr>
-                    <th>Medication</th>
-                    <th>Dose</th>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr>
-                    <td>buffered lidocain 1% (buffered lidocaine 1% J-Tip)</td>
-                    <td>0.25 mL intrDermal as needed</td>
-                  </tr>
-                  <tr>
-                    <td>fentaNYL (fentaNYL 50 mcg/ml infusion BOLUS)</td>
+                    <td>Fentanyl 50mcg IV q1 hour PRN pain-severe</td>
                     <td>50 mcg = 1 mL IV</td>
                   </tr>
                   <tr>
-                    <td>Hydromorphine</td>
+                    <td>Hydromorphone</td>
                     <td>0.6 mg = 3 mL IV Q 1 hr</td>
                   </tr>
                 </tbody>
               </table>              
             </div>
-          </div>
-        <!-- end of row 3 -->  
+            <!-- end of column 3 -->
+            </div>
+        <!-- end of row-->  
         </div>
     <!-- end of main container -->
     </div>
@@ -502,9 +348,6 @@
     <!-- bootstrap-daterangepicker -->
     <script src="../vendors/moment/min/moment.min.js"></script>
     <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- morris.js -->
-    <script src="../vendors/raphael/raphael.min.js"></script>
-    <script src="../vendors/morris.js/morris.min.js"></script>
     <!-- data scripts -->
     <script src="../build/js/custom.min.js"></script>
     <script src="./js/data.js"></script>

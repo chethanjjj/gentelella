@@ -1,300 +1,611 @@
-// temperature graph
-Morris.Area({
-  // ID of the element in which to draw the chart.
-  element: 'temp',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { time: '8:00', temp: 36.1},
-    { time: '9:00', temp: 33.1},
-    { time: '10:00', temp: 39},
-    { time: '11:00', temp: 45},
-    { time: '12:00', temp: 31},
-    { time: '13:00', temp: 36.4},
-    { time: '14:00', temp: 36.4},
-    { time: '15:00', temp: 36.3},
-    { time: '16:00', temp: 36.4},
-    { time: '17:00', temp: 36.2},
-    { time: '18:00', temp: 36.3},
-    { time: '19:00', temp: 36.7},
-    { time: '20:00', temp: 36.5},
-    { time: '21:00', temp: 36.6},
-    { time: '22:00', temp: 36.4},
-    { time: '23:00', temp: 36.5},
-    { time: '0:00', temp: 36.5},
-    { time: '1:00', temp: 36.6},
-    { time: '2:00', temp: 36.4},
-    { time: '3:00', temp: 36.5},
-    { time: '4:00', temp: 39.7},
-    { time: '5:00', temp: 48},
-    { time: '6:00', temp: 40},
-    { time: '7:00', temp: 41},
-    { time: '8:00', temp: 42}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'time',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['temp'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ["Temperature"],
-  xLabels: "hour",
-  parseTime: false,
-  hideHover: true,
-  behaveLikeLine: true,
-  pointSize: 0,
-  grid: false
+$(function () { 
+Highcharts.chart('temp', {
+    chart: {
+        type: 'spline'
+      },
+      credits: {
+      enabled: false
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: {
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+      },
+      legend: {
+        enabled: false
+      },
+      title:{
+        text:""
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [{
+        name: "Temperature",
+        color: "#0078B5",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 36.1],
+            [Date.UTC(2017, 5, 22, 9), 33.1],
+            [Date.UTC(2017, 5, 22, 10), 39],
+            [Date.UTC(2017, 5, 22, 11), 45],
+            [Date.UTC(2017, 5, 22, 12), 31],
+            [Date.UTC(2017, 5, 22, 13), 36.4],
+            [Date.UTC(2017, 5, 22, 14), 36.4],
+            [Date.UTC(2017, 5, 22, 15), 36.3],
+            [Date.UTC(2017, 5, 22, 16), 36.4],
+            [Date.UTC(2017, 5, 22, 17), 36.2],
+            [Date.UTC(2017, 5, 22, 18), 36.3],
+            [Date.UTC(2017, 5, 22, 19), 36.7],
+            [Date.UTC(2017, 5, 22, 20), 36.5],
+            [Date.UTC(2017, 5, 22, 21), 36.6],
+            [Date.UTC(2017, 5, 22, 22), 36.4],
+            [Date.UTC(2017, 5, 22, 23), 36.5],
+            [Date.UTC(2017, 5, 23, 0), 36.5],
+            [Date.UTC(2017, 5, 23, 1), 36.6],
+            [Date.UTC(2017, 5, 23, 2), 36.4],
+            [Date.UTC(2017, 5, 23, 3), 36.5],
+            [Date.UTC(2017, 5, 23, 4), 39.7],
+            [Date.UTC(2017, 5, 23, 5), 48],
+            [Date.UTC(2017, 5, 23, 6), 40],
+            [Date.UTC(2017, 5, 23, 7), 41],
+            [Date.UTC(2017, 5, 23, 8), 42]
+        ]
+      }]
+    });
+Highcharts.chart('hr', {
+    chart: {
+        type: 'spline'
+      },
+      credits: {
+      enabled: false
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: [
+      {
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+      }, {
+        opposite: true,
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+        max: 15,
+        min: 5
+      }
+      ],
+      title:{
+        text:""
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [
+      {
+        name: "HR",
+        color: "#0078B5",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 57],
+            [Date.UTC(2017, 5, 22, 9), 54],
+            [Date.UTC(2017, 5, 22, 10), 53],
+            [Date.UTC(2017, 5, 22, 11), 50],
+            [Date.UTC(2017, 5, 22, 12), 45],
+            [Date.UTC(2017, 5, 22, 13), 57],
+            [Date.UTC(2017, 5, 22, 14), 53],
+            [Date.UTC(2017, 5, 22, 15), 56],
+            [Date.UTC(2017, 5, 22, 16), 56],
+            [Date.UTC(2017, 5, 22, 17), 56],
+            [Date.UTC(2017, 5, 22, 18), 61],
+            [Date.UTC(2017, 5, 22, 19), 60],
+            [Date.UTC(2017, 5, 22, 20), 0],
+            [Date.UTC(2017, 5, 22, 21), 67],
+            [Date.UTC(2017, 5, 22, 22), 70],
+            [Date.UTC(2017, 5, 22, 23), 66],
+            [Date.UTC(2017, 5, 23, 0), 58],
+            [Date.UTC(2017, 5, 23, 1), 55],
+            [Date.UTC(2017, 5, 23, 2), 60],
+            [Date.UTC(2017, 5, 23, 3), 61],
+            [Date.UTC(2017, 5, 23, 4), 65],
+            [Date.UTC(2017, 5, 23, 5), 55],
+            [Date.UTC(2017, 5, 23, 6), 60],
+            [Date.UTC(2017, 5, 23, 7), 62],
+            [Date.UTC(2017, 5, 23, 8), 60]
+            ]
+      }, {
+        name: "RR",
+        color: "#F16524",
+        yAxis: 1,
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 10],
+            [Date.UTC(2017, 5, 22, 9), 11],
+            [Date.UTC(2017, 5, 22, 10), 12],
+            [Date.UTC(2017, 5, 22, 11), 11],
+            [Date.UTC(2017, 5, 22, 12), 11],
+            [Date.UTC(2017, 5, 22, 13), 10],
+            [Date.UTC(2017, 5, 22, 14), 11],
+            [Date.UTC(2017, 5, 22, 15), 13],
+            [Date.UTC(2017, 5, 22, 16), 11],
+            [Date.UTC(2017, 5, 22, 17), 12],
+            [Date.UTC(2017, 5, 22, 18), 10],
+            [Date.UTC(2017, 5, 22, 19), 9],
+            [Date.UTC(2017, 5, 22, 20), 9],
+            [Date.UTC(2017, 5, 22, 21), 11],
+            [Date.UTC(2017, 5, 22, 22), 12],
+            [Date.UTC(2017, 5, 22, 23), 13],
+            [Date.UTC(2017, 5, 23, 0), 12],
+            [Date.UTC(2017, 5, 23, 1), 11],
+            [Date.UTC(2017, 5, 23, 2), 10],
+            [Date.UTC(2017, 5, 23, 3), 12],
+            [Date.UTC(2017, 5, 23, 4), 10],
+            [Date.UTC(2017, 5, 23, 5), 10],
+            [Date.UTC(2017, 5, 23, 6), 10],
+            [Date.UTC(2017, 5, 23, 7), 10],
+            [Date.UTC(2017, 5, 23, 8), 10]
+          ]
+        }
+      ]
+    });
+Highcharts.chart('resp', {
+    chart: {
+        type: 'spline'
+      },
+      credits: {
+      enabled: false
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis:
+      {
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+      },
+      title:{
+        text:""
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [
+      {
+        name: "Rate",
+        color: "#0078B5",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 25],
+            [Date.UTC(2017, 5, 22, 9), 10],
+            [Date.UTC(2017, 5, 22, 10), 10],
+            [Date.UTC(2017, 5, 22, 11), 10],
+            [Date.UTC(2017, 5, 22, 12), 11],
+            [Date.UTC(2017, 5, 22, 13), 12],
+            [Date.UTC(2017, 5, 22, 14), 10],
+            [Date.UTC(2017, 5, 22, 15), 10],
+            [Date.UTC(2017, 5, 22, 16), 10],
+            [Date.UTC(2017, 5, 22, 17), 10],
+            [Date.UTC(2017, 5, 22, 18), 10],
+            [Date.UTC(2017, 5, 22, 19), 10],
+            [Date.UTC(2017, 5, 22, 20), 10],
+            [Date.UTC(2017, 5, 22, 21), 10],
+            [Date.UTC(2017, 5, 22, 22), 10],
+            [Date.UTC(2017, 5, 22, 23), 10],
+            [Date.UTC(2017, 5, 23, 0), 10],
+            [Date.UTC(2017, 5, 23, 1), 11],
+            [Date.UTC(2017, 5, 23, 2), 10],
+            [Date.UTC(2017, 5, 23, 3), 10],
+            [Date.UTC(2017, 5, 23, 4), 12],
+            [Date.UTC(2017, 5, 23, 5), 10],
+            [Date.UTC(2017, 5, 23, 6), 10],
+            [Date.UTC(2017, 5, 23, 7), 10],
+            [Date.UTC(2017, 5, 23, 8), 10]
+            ]
+      }, {
+        name: "PIP",
+        color: "#F16524",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 40],
+            [Date.UTC(2017, 5, 22, 9), 38],
+            [Date.UTC(2017, 5, 22, 10), 35],
+            [Date.UTC(2017, 5, 22, 11), 30],
+            [Date.UTC(2017, 5, 22, 12), 30],
+            [Date.UTC(2017, 5, 22, 13), 30],
+            [Date.UTC(2017, 5, 22, 14), 30],
+            [Date.UTC(2017, 5, 22, 15), 30],
+            [Date.UTC(2017, 5, 22, 16), 30],
+            [Date.UTC(2017, 5, 22, 17), 30],
+            [Date.UTC(2017, 5, 22, 18), 30],
+            [Date.UTC(2017, 5, 22, 19), 30],
+            [Date.UTC(2017, 5, 22, 20), 30],
+            [Date.UTC(2017, 5, 22, 21), 30],
+            [Date.UTC(2017, 5, 22, 22), 30],
+            [Date.UTC(2017, 5, 22, 23), 30],
+            [Date.UTC(2017, 5, 23, 0), 30],
+            [Date.UTC(2017, 5, 23, 1), 30],
+            [Date.UTC(2017, 5, 23, 2), 30],
+            [Date.UTC(2017, 5, 23, 3), 30],
+            [Date.UTC(2017, 5, 23, 4), 30],
+            [Date.UTC(2017, 5, 23, 5), 30],
+            [Date.UTC(2017, 5, 23, 6), 30],
+            [Date.UTC(2017, 5, 23, 7), 30],
+            [Date.UTC(2017, 5, 23, 8), 30]
+          ]
+        }, {
+        name: "PEEP",
+        color: "#F6D155",
+        dashStyle: "longdash",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 28],
+            [Date.UTC(2017, 5, 22, 9), 19],
+            [Date.UTC(2017, 5, 22, 10), 28],
+            [Date.UTC(2017, 5, 22, 11), 16],
+            [Date.UTC(2017, 5, 22, 12), 16],
+            [Date.UTC(2017, 5, 22, 13), 16],
+            [Date.UTC(2017, 5, 22, 14), 16],
+            [Date.UTC(2017, 5, 22, 15), 16],
+            [Date.UTC(2017, 5, 22, 16), 16],
+            [Date.UTC(2017, 5, 22, 17), 16],
+            [Date.UTC(2017, 5, 22, 18), 16],
+            [Date.UTC(2017, 5, 22, 19), 16],
+            [Date.UTC(2017, 5, 22, 20), 16],
+            [Date.UTC(2017, 5, 22, 21), 16],
+            [Date.UTC(2017, 5, 22, 22), 16],
+            [Date.UTC(2017, 5, 22, 23), 16],
+            [Date.UTC(2017, 5, 23, 0), 16],
+            [Date.UTC(2017, 5, 23, 1), 16],
+            [Date.UTC(2017, 5, 23, 2), 17],
+            [Date.UTC(2017, 5, 23, 3), 16],
+            [Date.UTC(2017, 5, 23, 4), 16],
+            [Date.UTC(2017, 5, 23, 5), 16],
+            [Date.UTC(2017, 5, 23, 6), 16],
+            [Date.UTC(2017, 5, 23, 7), 16],
+            [Date.UTC(2017, 5, 23, 8), 16]
+          ]
+        }
+      ]
+    });
+Highcharts.chart('o2_co2', {
+    chart: {
+        type: 'spline'
+      },
+      credits: {
+      enabled: false
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: [
+      {
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+      }, {
+        opposite: true,
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+        max: 1,
+        min: 0
+      }],
+      title:{
+        text:""
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [
+      {
+        name: "SpO2",
+        color: "#0078B5",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 98],
+            [Date.UTC(2017, 5, 22, 9), 99],
+            [Date.UTC(2017, 5, 22, 10), 100],
+            [Date.UTC(2017, 5, 22, 11), 100],
+            [Date.UTC(2017, 5, 22, 12), 99],
+            [Date.UTC(2017, 5, 22, 13), 99],
+            [Date.UTC(2017, 5, 22, 14), 100],
+            [Date.UTC(2017, 5, 22, 15), 100],
+            [Date.UTC(2017, 5, 22, 16), 95],
+            [Date.UTC(2017, 5, 22, 17), 98],
+            [Date.UTC(2017, 5, 22, 18), 80],
+            [Date.UTC(2017, 5, 22, 19), 85],
+            [Date.UTC(2017, 5, 22, 20), 90],
+            [Date.UTC(2017, 5, 22, 21), 95],
+            [Date.UTC(2017, 5, 22, 22), 100],
+            [Date.UTC(2017, 5, 22, 23), 100],
+            [Date.UTC(2017, 5, 23, 0), 96],
+            [Date.UTC(2017, 5, 23, 1), 95],
+            [Date.UTC(2017, 5, 23, 2), 85],
+            [Date.UTC(2017, 5, 23, 3), 90],
+            [Date.UTC(2017, 5, 23, 4), 95],
+            [Date.UTC(2017, 5, 23, 5), 99],
+            [Date.UTC(2017, 5, 23, 6), 100],
+            [Date.UTC(2017, 5, 23, 7), 100],
+            [Date.UTC(2017, 5, 23, 8), 100]
+            ]
+      }, {
+        name: "FiO2",
+        color: "#F16524",
+        yAxis: 1,
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 0],
+            [Date.UTC(2017, 5, 22, 9), 0.2],
+            [Date.UTC(2017, 5, 22, 10), 0.25],
+            [Date.UTC(2017, 5, 22, 11), 0.5],
+            [Date.UTC(2017, 5, 22, 12), 0.6],
+            [Date.UTC(2017, 5, 22, 13), 0.6],
+            [Date.UTC(2017, 5, 22, 14), 0.6],
+            [Date.UTC(2017, 5, 22, 15), 0.6],
+            [Date.UTC(2017, 5, 22, 16), 0.6],
+            [Date.UTC(2017, 5, 22, 17), 0.6],
+            [Date.UTC(2017, 5, 22, 18), 0.6],
+            [Date.UTC(2017, 5, 22, 19), 0.65],
+            [Date.UTC(2017, 5, 22, 20), 0.6],
+            [Date.UTC(2017, 5, 22, 21), 0.6],
+            [Date.UTC(2017, 5, 22, 22), 0.65],
+            [Date.UTC(2017, 5, 22, 23), 0.7],
+            [Date.UTC(2017, 5, 23, 0), 0.7],
+            [Date.UTC(2017, 5, 23, 1), 0.7],
+            [Date.UTC(2017, 5, 23, 2), 0.7],
+            [Date.UTC(2017, 5, 23, 3), 0.7],
+            [Date.UTC(2017, 5, 23, 4), 0.7],
+            [Date.UTC(2017, 5, 23, 5), 0.7],
+            [Date.UTC(2017, 5, 23, 6), 1],
+            [Date.UTC(2017, 5, 23, 7), 1],
+            [Date.UTC(2017, 5, 23, 8), 1]
+          ]
+        }, {
+        name: "ETCO2",
+        color: "#F6D155",
+        dashStyle: "longdash",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 37],
+            [Date.UTC(2017, 5, 22, 9), 38],
+            [Date.UTC(2017, 5, 22, 10), 39],
+            [Date.UTC(2017, 5, 22, 11), 40],
+            [Date.UTC(2017, 5, 22, 12), 40],
+            [Date.UTC(2017, 5, 22, 13), 40],
+            [Date.UTC(2017, 5, 22, 14), 40],
+            [Date.UTC(2017, 5, 22, 15), 40],
+            [Date.UTC(2017, 5, 22, 16), 40],
+            [Date.UTC(2017, 5, 22, 17), 40],
+            [Date.UTC(2017, 5, 22, 18), 35],
+            [Date.UTC(2017, 5, 22, 19), 30],
+            [Date.UTC(2017, 5, 22, 20), 28],
+            [Date.UTC(2017, 5, 22, 21), 28],
+            [Date.UTC(2017, 5, 22, 22), 28],
+            [Date.UTC(2017, 5, 22, 23), 28],
+            [Date.UTC(2017, 5, 23, 0), 30],
+            [Date.UTC(2017, 5, 23, 1), 35],
+            [Date.UTC(2017, 5, 23, 2), 40],
+            [Date.UTC(2017, 5, 23, 3), 40],
+            [Date.UTC(2017, 5, 23, 4), 48],
+            [Date.UTC(2017, 5, 23, 5), 50],
+            [Date.UTC(2017, 5, 23, 6), 55],
+            [Date.UTC(2017, 5, 23, 7), 55],
+            [Date.UTC(2017, 5, 23, 8), 60]
+          ]
+        }
+      ]
+    });
+Highcharts.chart('bp', {
+    chart: {
+        type: 'spline'
+      },
+      credits: {
+      enabled: false
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: {
+        title: {
+          text: ""
+        },
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+      },
+      title:{
+        text:""
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [
+      {
+        name: "Blood Pressure",
+        color: "#0078B5",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 107],
+            [Date.UTC(2017, 5, 22, 9), 108],
+            [Date.UTC(2017, 5, 22, 10), 105],
+            [Date.UTC(2017, 5, 22, 11), 103],
+            [Date.UTC(2017, 5, 22, 12), 106],
+            [Date.UTC(2017, 5, 22, 13), 107],
+            [Date.UTC(2017, 5, 22, 14), 106],
+            [Date.UTC(2017, 5, 22, 15), 107],
+            [Date.UTC(2017, 5, 22, 16), 105],
+            [Date.UTC(2017, 5, 22, 17), 99],
+            [Date.UTC(2017, 5, 22, 18), 98],
+            [Date.UTC(2017, 5, 22, 19), 96],
+            [Date.UTC(2017, 5, 22, 20), 99],
+            [Date.UTC(2017, 5, 22, 21), 95],
+            [Date.UTC(2017, 5, 22, 22), 90],
+            [Date.UTC(2017, 5, 22, 23), 90],
+            [Date.UTC(2017, 5, 23, 0), 88],
+            [Date.UTC(2017, 5, 23, 1), 85],
+            [Date.UTC(2017, 5, 23, 2), 85],
+            [Date.UTC(2017, 5, 23, 3), 86],
+            [Date.UTC(2017, 5, 23, 4), 87],
+            [Date.UTC(2017, 5, 23, 5), 87],
+            [Date.UTC(2017, 5, 23, 6), 85],
+            [Date.UTC(2017, 5, 23, 7), 85],
+            [Date.UTC(2017, 5, 23, 8), 80]
+            ]
+      }, {
+        name: "Systolic BP",
+        color: "#F16524",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 132],
+            [Date.UTC(2017, 5, 22, 9), 133],
+            [Date.UTC(2017, 5, 22, 10), 131],
+            [Date.UTC(2017, 5, 22, 11), 130],
+            [Date.UTC(2017, 5, 22, 12), 131],
+            [Date.UTC(2017, 5, 22, 13), 131],
+            [Date.UTC(2017, 5, 22, 14), 131],
+            [Date.UTC(2017, 5, 22, 15), 128],
+            [Date.UTC(2017, 5, 22, 16), 120],
+            [Date.UTC(2017, 5, 22, 17), 120],
+            [Date.UTC(2017, 5, 22, 18), 119],
+            [Date.UTC(2017, 5, 22, 19), 120],
+            [Date.UTC(2017, 5, 22, 20), 118],
+            [Date.UTC(2017, 5, 22, 21), 119],
+            [Date.UTC(2017, 5, 22, 22), 120],
+            [Date.UTC(2017, 5, 22, 23), 125],
+            [Date.UTC(2017, 5, 23, 0), 125],
+            [Date.UTC(2017, 5, 23, 1), 130],
+            [Date.UTC(2017, 5, 23, 2), 130],
+            [Date.UTC(2017, 5, 23, 3), 130],
+            [Date.UTC(2017, 5, 23, 4), 131],
+            [Date.UTC(2017, 5, 23, 5), 128],
+            [Date.UTC(2017, 5, 23, 6), 128],
+            [Date.UTC(2017, 5, 23, 7), 125],
+            [Date.UTC(2017, 5, 23, 8), 128]
+          ]
+        }, {
+        name: "Diastolic BP",
+        color: "#F6D155",
+        dashStyle: "longdash",
+        data: [
+            [Date.UTC(2017, 5, 22, 8), 91],
+            [Date.UTC(2017, 5, 22, 9), 90],
+            [Date.UTC(2017, 5, 22, 10), 93],
+            [Date.UTC(2017, 5, 22, 11), 89],
+            [Date.UTC(2017, 5, 22, 12), 89],
+            [Date.UTC(2017, 5, 22, 13), 88],
+            [Date.UTC(2017, 5, 22, 14), 91],
+            [Date.UTC(2017, 5, 22, 15), 87],
+            [Date.UTC(2017, 5, 22, 16), 85],
+            [Date.UTC(2017, 5, 22, 17), 87],
+            [Date.UTC(2017, 5, 22, 18), 88],
+            [Date.UTC(2017, 5, 22, 19), 84],
+            [Date.UTC(2017, 5, 22, 20), 84],
+            [Date.UTC(2017, 5, 22, 21), 84],
+            [Date.UTC(2017, 5, 22, 22), 85],
+            [Date.UTC(2017, 5, 22, 23), 90],
+            [Date.UTC(2017, 5, 23, 0), 85],
+            [Date.UTC(2017, 5, 23, 1), 80],
+            [Date.UTC(2017, 5, 23, 2), 75],
+            [Date.UTC(2017, 5, 23, 3), 77],
+            [Date.UTC(2017, 5, 23, 4), 75],
+            [Date.UTC(2017, 5, 23, 5), 77],
+            [Date.UTC(2017, 5, 23, 6), 76],
+            [Date.UTC(2017, 5, 23, 7), 77],
+            [Date.UTC(2017, 5, 23, 8), 77]
+          ]
+        }
+      ]
+    });
+Highcharts.chart("intake_output",{
+    title: {
+      text: ''
+    },
+    credits: {
+      enabled: false
+    },
+    yAxis: {
+      title: {
+        text: ""
+      },
+      gridLineWidth: 0,
+      minorGridLineWidth: 0,
+    },
+    xAxis: {
+        type: "datetime"
+    },
+    legend: {
+      enabled: false
+    },
+    plotOptions: {
+      series: {
+        stacking: "normal"
+      }
+    },
+    series: [{
+        type: 'column',
+        name: 'Intake',
+        color: "#4C6A92",
+        data: [
+              [Date.UTC(2017, 5, 23), 2000], 
+              [Date.UTC(2017, 5, 24), 2000], 
+              [Date.UTC(2017, 5, 25), 7000],
+              [Date.UTC(2017, 5, 26), 2100],
+              [Date.UTC(2017, 5, 27), 800]
+              ]
+    }, {
+        type: 'column',
+        name: 'Output',
+        color: "#F6D155",
+        data: [
+              [Date.UTC(2017, 5, 23), -2500], 
+              [Date.UTC(2017, 5, 24), -1400], 
+              [Date.UTC(2017, 5, 25), -2300],
+              [Date.UTC(2017, 5, 26), -3000],
+              [Date.UTC(2017, 5, 27), -800]
+              ]
+    }, {
+        type: 'spline',
+        color: "#000000",
+        name: 'Trend',
+        data: [
+              [Date.UTC(2017, 5, 23), 2000-2500], 
+              [Date.UTC(2017, 5, 24), 2000-1400], 
+              [Date.UTC(2017, 5, 25), 7000-2300],
+              [Date.UTC(2017, 5, 26), 2100-3000],
+              [Date.UTC(2017, 5, 27), 800-800]
+              ],
+        marker: {
+            lineWidth: 2,
+            lineColor: "#000000",
+            fillColor: 'white'
+          }
+        }
+      ]
+    });
 });
-
-// heart and respiration rate
-Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'hr',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { time: '8:00', hr: 57, rr: 10},
-    { time: '9:00', hr: 54, rr: 11},
-    { time: '10:00', hr: 53, rr: 12},
-    { time: '11:00', hr: 55, rr: 11},
-    { time: '12:00', hr: 50, rr: 12},
-    { time: '13:00', hr: 48, rr: 11},
-    { time: '14:00', hr: 57, rr: 12},
-    { time: '15:00', hr: 53, rr: 12},
-    { time: '16:00', hr: 55, rr: 12},
-    { time: '17:00', hr: 56, rr: 12},
-    { time: '18:00', hr: 56, rr: 10},
-    { time: '19:00', hr: 61, rr: 11},
-    { time: '20:00', hr: 60, rr: 11},
-    { time: '21:00', hr: 57, rr: 11},
-    { time: '22:00', hr: 48, rr: 11},
-    { time: '23:00', hr: 48, rr: 11},
-    { time: '0:00', hr: 0, rr: 16},
-    { time: '1:00', hr: 67, rr: 16},
-    { time: '2:00', hr: 70, rr: 22},
-    { time: '3:00', hr: 65, rr: 10},
-    { time: '4:00', hr: 66, rr: 9},
-    { time: '5:00', hr: 58, rr: 10},
-    { time: '6:00', hr: 68, rr: 10},
-    { time: '7:00', hr: 67, rr: 10},
-    { time: '8:00', hr: 67, rr: 10}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'time',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['hr', 'rr'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ["Heart Rate", "Resp Rate"],
-  xLabels: "hour",
-  parseTime: false,
-  hideHover: true,
-  behaveLikeLine: true,
-  pointSize: 0,
-  grid: false
-});
-
-// respiration graph
-Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'resp',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { time: '8:00', rt: 25, pip: 40, peep: 28},
-    { time: '9:00', rt: 10, pip: 38, peep: 19},
-    { time: '10:00', rt: 10, pip: 35, peep: 18},
-    { time: '11:00', rt: 10, pip: 30, peep: 16},
-    { time: '12:00', rt: 10, pip: 30, peep: 16},
-    { time: '13:00', rt: 10, pip: 30, peep: 16},
-    { time: '14:00', rt: 10, pip: 30, peep: 16},
-    { time: '15:00', rt: 10, pip: 30, peep: 16},
-    { time: '16:00', rt: 10, pip: 30, peep: 16},
-    { time: '17:00', rt: 10, pip: 30, peep: 16},
-    { time: '18:00', rt: 10, pip: 30, peep: 16},
-    { time: '19:00', rt: 10, pip: 30, peep: 16},
-    { time: '20:00', rt: 10, pip: 30, peep: 16},
-    { time: '21:00', rt: 10, pip: 30, peep: 16},
-    { time: '22:00', rt: 10, pip: 30, peep: 16},
-    { time: '23:00', rt: 10, pip: 30, peep: 16},
-    { time: '0:00', rt: 10, pip: 30, peep: 16},
-    { time: '1:00', rt: 10, pip: 30, peep: 16},
-    { time: '2:00', rt: 10, pip: 30, peep: 16},
-    { time: '3:00', rt: 10, pip: 30, peep: 16},
-    { time: '4:00', rt: 10, pip: 30, peep: 16},
-    { time: '5:00', rt: 10, pip: 30, peep: 16},
-    { time: '6:00', rt: 10, pip: 30, peep: 16},
-    { time: '7:00', rt: 12, pip: 30, peep: 16},
-    { time: '8:00', rt: 10, pip: 30, peep: 16}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'time',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['pip', 'peep', 'rt'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ["PIP", "PEEP", "Rate"],
-  xLabels: "hour",
-  parseTime: false,
-  hideHover: true,
-  behaveLikeLine: true,
-  pointSize: 0,
-  grid: false
-});
-
-// o2 and co2 graph
-Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'o2_co2',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { time: '8:00', so2: 98, fo2: 30, co2: 37},
-    { time: '9:00', so2: 99, fo2: 30, co2: 38},
-    { time: '10:00', so2: 100, fo2: 30, co2: 39},
-    { time: '11:00', so2: 100, fo2: 30, co2: 40},
-    { time: '12:00', so2: 99, fo2: 30, co2: 30},
-    { time: '13:00', so2: 99, fo2: 30, co2: 35},
-    { time: '14:00', so2: 100, fo2: 30, co2: 28},
-    { time: '15:00', so2: 80, fo2: 12, co2: 32},
-    { time: '16:00', so2: 90, fo2: 12, co2: 25},
-    { time: '17:00', so2: 100, fo2: 12, co2: 26},
-    { time: '18:00', so2: 82, fo2: 12, co2: 15},
-    { time: '19:00', so2: 89, fo2: 12, co2: 18},
-    { time: '20:00', so2: 91, fo2: 12, co2: 30},
-    { time: '21:00', so2: 95, fo2: 12, co2: 25},
-    { time: '22:00', so2: 100, fo2: 12, co2: 38},
-    { time: '23:00', so2: 95, fo2: 12, co2: 38},
-    { time: '0:00', so2: 93, fo2: 12, co2: 40},
-    { time: '1:00', so2: 92, fo2: 12, co2: 40},
-    { time: '2:00', so2: 92, fo2: 12, co2: 41},
-    { time: '3:00', so2: 92, fo2: 12, co2: 35},
-    { time: '4:00', so2: 80, fo2: 12, co2: 36},
-    { time: '5:00', so2: 89, fo2: 12, co2: 50},
-    { time: '6:00', so2: 92, fo2: 12, co2: 48},
-    { time: '7:00', so2: 95, fo2: 12, co2: 50},
-    { time: '8:00', so2: 100, fo2: 12, co2: 45}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'time',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['so2', 'fo2', 'co2'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ["SpO2", "FiO2", "ETCO2"],
-  xLabels: "hour",
-  parseTime: false,
-  hideHover: true,
-  behaveLikeLine: true,
-  pointSize: 0,
-  grid: false
-});
-
-// blood pressure graph
-Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'bp',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { time: '8:00', bp: 107, sys: 132, dia: 91},
-    { time: '9:00', bp: 106, sys: 131, dia: 91},
-    { time: '10:00', bp: 106, sys: 131, dia: 91},
-    { time: '11:00', bp: 106, sys: 131, dia: 92},
-    { time: '12:00', bp: 107, sys: 132, dia: 91},
-    { time: '13:00', bp: 106, sys: 131, dia: 91},
-    { time: '14:00', bp: 106, sys: 131, dia: 94},
-    { time: '15:00', bp: 98, sys: 123, dia: 84},
-    { time: '16:00', bp: 95, sys: 120, dia: 81},
-    { time: '17:00', bp: 98, sys: 123, dia: 85},
-    { time: '18:00', bp: 105, sys: 131, dia: 90},
-    { time: '19:00', bp: 115, sys: 135, dia: 90},
-    { time: '20:00', bp: 115, sys: 135, dia: 100},
-    { time: '21:00', bp: 123, sys: 144, dia: 97},
-    { time: '22:00', bp: 93, sys: 115, dia: 81},
-    { time: '23:00', bp: 89, sys: 112, dia: 76},
-    { time: '0:00', bp: 84, sys: 105, dia: 71},
-    { time: '1:00', bp: 98, sys: 105, dia: 84},
-    { time: '2:00', bp: 99, sys: 120, dia: 86},
-    { time: '3:00', bp: 94, sys: 123, dia: 81},
-    { time: '4:00', bp: 92, sys: 112, dia: 79},
-    { time: '5:00', bp: 87, sys: 113, dia: 74},
-    { time: '6:00', bp: 85, sys: 108, dia: 73},
-    { time: '7:00', bp: 85, sys: 109, dia: 73},
-    { time: '8:00', bp: 86, sys: 105, dia: 93}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'time',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['bp', 'sys', 'dia'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ["Blood Pressure", "Systolic BP", "Diastolic BP"],
-  xLabels: "hour",
-  parseTime: false,
-  hideHover: true,
-  behaveLikeLine: true,
-  pointSize: 0,
-  grid: false
-});
-
-// intake and output graph
-// creating intake and output data
-var xValue = ['4/25/17', '4/26/17', '4/27/17', '4/28/17', '4/29/17', 'Total'];
-var yValue_output = [-2500, -1400, -2300, -3000, -800];
-var yValue_input = [2000, 2000, 7000, 2100, 800];
-// summing function
-function getSum(total, num) {
-    return total + num;
-}
-// sum of intake and output
-var yValue_output_total = yValue_output.reduce(getSum);
-var yValue_input_total = yValue_input.reduce(getSum);
-// add sum values to arrays
-yValue_output.push(yValue_output_total)
-yValue_input.push(yValue_input_total)
-// output data
-var output = {
-  x: xValue,
-  y: yValue_output,
-  name: 'Output',
-  type: 'bar',
-    marker: {
-    color: 'rgb(246, 209, 85)',
-    opacity: 0.5
-  }
-};
-// intake data
-var input = {
-  x: xValue,
-  y: yValue_input,
-  name: 'Intake',
-  type: 'bar',
-  marker: {
-    color: 'rgb(76, 106, 146)',
-    opacity: 0.5,
-  }  
-};
-var annotationContent = [];
-var data = [input, output];
-var layout = {barmode: 'relative',
-annotations: annotationContent,
-yaxis: {
-  showgrid: false,
-  showline: false
-}
-};
-// adds the difference between intake and output value to the top of each bar graph
-for( var i = 0 ; i < xValue.length ; i++ ){
-  var result = {
-    x: xValue[i],
-    y: yValue_input[i],
-    text: yValue_input[i] + yValue_output[i],
-    xanchor: 'center',
-    yanchor: 'bottom',
-    showarrow: false
-  };
-  annotationContent.push(result);
-}
-// plot data
-Plotly.newPlot('intake_output', data, layout);
