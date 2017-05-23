@@ -71,6 +71,10 @@ Highcharts.chart('hr', {
       xAxis: {
         type: 'datetime'
       },
+      tooltip: {
+        shared: true,
+        crosshairs: true
+      },
       yAxis: [
       {
         title: {
@@ -171,6 +175,10 @@ Highcharts.chart('resp', {
       credits: {
       enabled: false
       },
+      tooltip: {
+        shared: true,
+        crosshairs: true
+      },      
       xAxis: {
         type: 'datetime'
       },
@@ -293,6 +301,10 @@ Highcharts.chart('o2_co2', {
       },
       credits: {
       enabled: false
+      },
+      tooltip: {
+        shared: true,
+        crosshairs: true
       },
       xAxis: {
         type: 'datetime'
@@ -426,6 +438,10 @@ Highcharts.chart('bp', {
       },
       credits: {
       enabled: false
+      },
+      tooltip: {
+        shared: true,
+        crosshairs: true
       },
       xAxis: {
         type: 'datetime'
